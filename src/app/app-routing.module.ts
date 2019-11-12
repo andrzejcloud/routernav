@@ -5,6 +5,7 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { Component404Component } from './component404/component404.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
 import { ProductSellerComponent } from './product-seller/product-seller.component';
+import { ShopingModule } from './shoping/shoping.module';
 
 
 const routes: Routes = [
@@ -19,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), ShopingModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
