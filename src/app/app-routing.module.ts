@@ -16,6 +16,7 @@ const routes: Routes = [
     {path: 'seller', component: ProductSellerComponent}
   ]
    },
+   {path: 'luxury', loadChildren: './luxury-product/luxury-product.module'},
   {path: '**', component: Component404Component}
 ];
 
