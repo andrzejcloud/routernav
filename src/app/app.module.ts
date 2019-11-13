@@ -11,7 +11,7 @@ import { ProductDescriptionComponent } from './product-description/product-descr
 import { ProductSellerComponent } from './product-seller/product-seller.component';
 import { ShopingModule } from './shoping/shoping.module';
 import { ShopingRoutingModule } from './shoping/shoping-routing.module';
-import LuxuryProductModule from './luxury-product/luxury-product.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import LuxuryProductModule from './luxury-product/luxury-product.module';
     AppRoutingModule,
     ShopingModule,
     ShopingRoutingModule,
-    LuxuryProductModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
