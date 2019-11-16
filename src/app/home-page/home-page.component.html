@@ -1,1 +1,6 @@
 <p>home-page works!</p>
+{{greeting}}
+<input (input)="onInputTarget($event)" [value]=greeting/>
+
+{{powitanie}}
+<input [(ngModel)] = "powitanie"/>

@@ -12,6 +12,7 @@ import { ProductSellerComponent } from './product-seller/product-seller.componen
 import { ShopingModule } from './shoping/shoping.module';
 import { ShopingRoutingModule } from './shoping/shoping-routing.module';
 import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     ShopingModule,
     ShopingRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
