@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import {debounceTime} from 'rxjs/operators';
+
+import { Observable, fromEvent, interval, Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home-page',
@@ -9,7 +13,20 @@ export class HomePageComponent implements OnInit {
 
   greeting: string = "witam";
   powitanie: string = "witam";
-  constructor() { }
+
+  inputFilter: FormControl = new FormControl();
+
+  @ViewChild('input')
+  input: ElementRef;
+
+  input$ = fromEvent<any>(input, 'keyup');
+
+  constructor() {
+    this.inputFilter.valueChanges.pipe(debounceTime(200)).subscribe(
+      value=>console.log(value),
+      error =>console.log(error)
+    );
+   }
 
   ngOnInit() {
   }

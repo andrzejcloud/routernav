@@ -12,7 +12,7 @@ import { ProductSellerComponent } from './product-seller/product-seller.componen
 import { ShopingModule } from './shoping/shoping.module';
 import { ShopingRoutingModule } from './shoping/shoping-routing.module';
 import {HttpClientModule} from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     ShopingModule,
     ShopingRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
