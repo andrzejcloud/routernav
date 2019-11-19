@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import {debounceTime} from 'rxjs/operators';
+import {debounceTime, map} from 'rxjs/operators';
 
 import { Observable, fromEvent, interval, Subject, Subscription } from 'rxjs';
 
@@ -11,15 +11,17 @@ import { Observable, fromEvent, interval, Subject, Subscription } from 'rxjs';
 })
 export class HomePageComponent implements OnInit {
 
+  @ViewChild('input', {static: false})
+  input: ElementRef;
+
   greeting: string = "witam";
   powitanie: string = "witam";
 
   inputFilter: FormControl = new FormControl();
 
-  @ViewChild('input')
-  input: ElementRef;
 
-  input$ = fromEvent<any>(input, 'keyup');
+  
+  
 
   constructor() {
     this.inputFilter.valueChanges.pipe(debounceTime(200)).subscribe(
@@ -29,6 +31,11 @@ export class HomePageComponent implements OnInit {
    }
 
   ngOnInit() {
+    setTimeout(() => {
+    const input = this.input.nativeElement;
+    const input$ = fromEvent<any>(input, 'keyup');
+    input$.pipe(debounceTime(250), map<any, string>(e => e.target.value)).subscribe(v => console.log("log: "+v));
+    },1000);
   }
 
   public onInputChange(event:Event):void{
