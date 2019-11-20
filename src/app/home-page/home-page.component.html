@@ -9,11 +9,14 @@
 
 <input #input placeholder="Enter Query..."/>
 
-<input
+<!--<input
 #input1
 type="text"
 id="textInput"
 class="form-control"
 placeholder="Enter Query..."
 autocomplete="false"
-/>
+/>-->
+
+<app-price-quoter (lastPrice)="priceQuoteHandler($event)"></app-price-quoter>
+{{stockSymbol}}

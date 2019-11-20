@@ -3,6 +3,9 @@ import { FormControl } from '@angular/forms';
 import {debounceTime, map} from 'rxjs/operators';
 
 import { Observable, fromEvent, interval, Subject, Subscription } from 'rxjs';
+import { EventEmitter } from 'events';
+import { IPriceQuote } from '../price-quoter/price-quoter.component';
+
 
 @Component({
   selector: 'app-home-page',
@@ -38,7 +41,11 @@ export class HomePageComponent implements OnInit {
     },1000);
   }
 
-  public onInputChange(event:Event):void{
+  public priceQuoteHandler(event:IPriceQuote):void{
+    console.log(event.lastPrice);
+  }
+
+  public onInputChange(event:IPriceQuote):void{
     let inputElement = <HTMLInputElement>event.target
     console.log("input: " +inputElement.value);
     console.log("input atr: " +inputElement.getAttribute("value"));

@@ -13,6 +13,7 @@ import { ShopingModule } from './shoping/shoping.module';
 import { ShopingRoutingModule } from './shoping/shoping-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PriceQuoterComponent } from './price-quoter/price-quoter.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomePageComponent,
     Component404Component,
     ProductDescriptionComponent,
-    ProductSellerComponent
+    ProductSellerComponent,
+    PriceQuoterComponent
   ],
   imports: [
     BrowserModule,
