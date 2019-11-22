@@ -1,4 +1,14 @@
 <p>form-one works!</p>
 <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
 <input type="text" name="textInput" ngModel>
+<input type="text" name="name" ngModel #i="ngModel">
+{{i.value}}
+
+<div ngModelGroup="fullName" #fullName="ngModelGroup">
+    <input type="text" [(ngModel)]="name" placeholder="name" name="firstName" ngModel>
+    <input type="text" name="lastName" ngModel>
+</div>
+
 </form>
+
+<!--{{f.value.fullName.firstName}}-->

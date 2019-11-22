@@ -7,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormOneComponent implements OnInit {
 
+  public name:string = "imię";
+  
   constructor() { }
 
   ngOnInit() {
   }
+
+  
 
   public onSubmit():void{
 
