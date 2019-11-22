@@ -14,6 +14,7 @@ import { ShopingRoutingModule } from './shoping/shoping-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PriceQuoterComponent } from './price-quoter/price-quoter.component';
+import { FormOneComponent } from './form-one/form-one.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PriceQuoterComponent } from './price-quoter/price-quoter.component';
     Component404Component,
     ProductDescriptionComponent,
     ProductSellerComponent,
-    PriceQuoterComponent
+    PriceQuoterComponent,
+    FormOneComponent
   ],
   imports: [
     BrowserModule,

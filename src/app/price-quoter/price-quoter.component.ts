@@ -9,13 +9,13 @@ import { last } from 'rxjs/operators';
 export class PriceQuoterComponent implements OnInit {
 @Output() lastPrice: EventEmitter <IPriceQuote> = new EventEmitter();
   constructor() { 
-    setInterval(()=>{
+    /*setInterval(()=>{
       let priceQuote: IPriceQuote = {
         stockSymbol: "PLK",
         lastPrice: 100*Math.random()
       };
       this.lastPrice.emit(priceQuote);
-    },10000);
+    },10000);*/
   }
 
   ngOnInit() {

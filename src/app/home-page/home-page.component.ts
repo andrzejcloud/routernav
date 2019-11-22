@@ -45,8 +45,8 @@ export class HomePageComponent implements OnInit {
     console.log(event.lastPrice);
   }
 
-  public onInputChange(event:IPriceQuote):void{
-    let inputElement = <HTMLInputElement>event.target
+  public onInputChange(event:Event):void{
+    let inputElement = <HTMLInputElement>event.target;
     console.log("input: " +inputElement.value);
     console.log("input atr: " +inputElement.getAttribute("value"));
     console.log("input k: " +this.greeting);
