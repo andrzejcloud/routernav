@@ -16,7 +16,7 @@ export class FormOneComponent implements OnInit {
 
   
 
-  public onSubmit():void{
-
+  public onSubmit(formValue:any):void{
+      console.log(formValue);
   }
 }
