@@ -6,6 +6,7 @@ import { Component404Component } from './component404/component404.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
 import { ProductSellerComponent } from './product-seller/product-seller.component';
 import { ShopingModule } from './shoping/shoping.module';
+import { OrderFormComponent } from './order-form/order-form.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   ]
    },
    {path: 'luxury', loadChildren: './luxury-product/luxury-product.module'},
+   {path: 'order', component: OrderFormComponent},
   {path: '**', component: Component404Component}
 ];
 

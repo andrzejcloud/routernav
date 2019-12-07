@@ -15,6 +15,13 @@ import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PriceQuoterComponent } from './price-quoter/price-quoter.component';
 import { FormOneComponent } from './form-one/form-one.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatMenuModule } from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { OrderFormComponent } from './order-form/order-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +33,8 @@ import { FormOneComponent } from './form-one/form-one.component';
     ProductDescriptionComponent,
     ProductSellerComponent,
     PriceQuoterComponent,
-    FormOneComponent
+    FormOneComponent,
+    OrderFormComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +43,13 @@ import { FormOneComponent } from './form-one/form-one.component';
     ShopingRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

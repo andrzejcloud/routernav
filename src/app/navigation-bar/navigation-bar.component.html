@@ -1,6 +1,24 @@
 <p>navigation-bar works!</p>
-<a [routerLink]="['/']">Strona główna|</a>
-<a [routerLink]="['product',1234,1]">Produkt|</a>
-<a [routerLink]="['shopping']">Shopping|</a>
-<a [routerLink]="['luxury']">Luxury</a>
+<mat-toolbar color="primary">
+<mat-menu #appMenu="matMenu">
+    <button mat-menu-item [routerLink]="['/']">Strona główna</button>
+    <button mat-menu-item [routerLink]="['product',1234,1]">Produkt</button>
+    <button mat-menu-item [routerLink]="['shopping']">Shopping</button>
+    <button mat-menu-item [routerLink]="['luxury']">Luxury</button>
+    <button mat-menu-item [routerLink]="['order']">Order</button>
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        Menu
+      </button>
+<BR>
+    <a [routerLink]="['/']">Strona główna|</a>
+    <a [routerLink]="['product',1234,1]">Produkt|</a>
+    <a [routerLink]="['shopping']">Shopping|</a>
+    <a [routerLink]="['luxury']">Luxury</a>
+
 <input type="button" value="produkt" (click)="navigateToProduct()"/>
+</mat-toolbar>
