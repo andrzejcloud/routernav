@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { BackendUrl } from './app.component';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 export class DataServiceService {
 
   url: string = "urlAddress";
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient, @Inject(BackendUrl) public backendUrl:string) { }
 
 public getTodos():void{
   this._http.get<Todo>("https://jsonplaceholder.typicode.com/todos/1").subscribe(
@@ -21,7 +22,7 @@ public getTodos1():Observable<Todo[]>{
 }
 
 public getTodo1():Observable<Todo>{
-  return this._http.get<Todo>("https://jsonplaceholder.typicode.com/todos/1");
+  return this._http.get<Todo>(this.backendUrl+"/1");
 }
 
 }

@@ -11,13 +11,14 @@ import { Observable } from 'rxjs';
 })
 export class OrderFormComponent implements OnInit {
   ngOnInit(): void {
-
+    this.dataService.getTodo1().subscribe(todo=>this.todo=todo,
+      error=>console.log("url-------------------"));
   }
 
   weatherControl: FormControl = new FormControl();
   userForm: FormGroup = new FormGroup({});
   todo$:Observable<Todo[]>;
-  todo1$:Observable<Todo>;
+  todo:Todo;
   
   constructor(private dataService:DataServiceService) {
     this.weatherControl.valueChanges.pipe(
@@ -29,7 +30,7 @@ export class OrderFormComponent implements OnInit {
    
   onFormSubmit() {
     console.log(this.weatherControl.value+this.dataService.url);
-    this.todo1$ = this.dataService.getTodo1();
+    this.dataService.getTodo1().subscribe(todo=>this.todo=todo);
   }
 
   public getTodo():Observable<Todo[]>{

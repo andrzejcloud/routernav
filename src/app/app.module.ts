@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent, BackendUrl } from './app.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -51,7 +51,8 @@ import { OrderFormComponent } from './order-form/order-form.component';
     MatIconModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [{provide:BackendUrl, useValue: "https://jsonplaceholder.typicode.com/todos"}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

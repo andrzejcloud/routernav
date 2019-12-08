@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, InjectionToken } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,3 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'routernav';
 }
+export const BackendUrl = new InjectionToken("");

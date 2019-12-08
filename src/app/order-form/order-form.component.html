@@ -2,16 +2,11 @@
 <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
 <input type="text" [formControl]="weatherControl">
 
-<div *ngIf="todo1$ | async">
-    {{(todo1$ | async)?.title}}
-</div>
+{{todo?.id}}{{ todo?.userId}}{{ todo?.title}}
 
-<div *ngIf="(todo1$ | async) as t1"> 
-    <div>{{t1.title}}</div>
-</div>
-<ul>
+<!--<ul>
 <li *ngFor="let t of todo$ | async">{{t.id}}</li>
-</ul>
+</ul>-->
 <input type="text" value="i">
 <button type="submit">Submit</button>
 </form>
